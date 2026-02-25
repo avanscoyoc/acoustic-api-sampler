@@ -1,2 +1,2 @@
 
-test_fun = lambda x: x * 2
+test_function = lambda x: x * 2
