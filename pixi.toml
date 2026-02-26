@@ -4,6 +4,7 @@ channels = ["conda-forge"]
 name = "acoustic-api-sampler"
 platforms = ["osx-arm64", "linux-64", "linux-aarch64"]
 version = "0.1.0"
+preview = ["pixi-build"]
 
 [tasks]
 
@@ -16,4 +17,6 @@ numpy = "*"
 pandas = "*"
 matplotlib = "*"
 boto3 = ">=1.42.56,<2"
+
+[pypi-dependencies]
 soundhub_utils = { git = "https://github.com/SchmidtDSE/soundhub_utils.git" }
