@@ -1,12 +1,10 @@
 [workspace]
 authors = ["avanscoyoc <amy.e.van.scoyoc@gmail.com>"]
-channels = ["conda-forge"]
 name = "acoustic-api-sampler"
-platforms = ["osx-arm64", "linux-64", "linux-aarch64"]
 version = "0.1.0"
+channels = ["conda-forge"]
+platforms = ["osx-arm64", "linux-64", "linux-aarch64"]
 preview = ["pixi-build"]
-
-[tasks]
 
 [dependencies]
 python = ">=3.11"
@@ -20,3 +18,15 @@ boto3 = ">=1.42.56,<2"
 
 [pypi-dependencies]
 soundhub_utils = { git = "https://github.com/SchmidtDSE/soundhub_utils.git" }
+
+[tool.pixi.feature.soundhub-utils.dependencies]
+tf_keras = "*"
+cocina = "*"
+sox_tensorflow = "*"
+
+[tool.pixi.feature.soundhub-utils.pypi-dependencies]
+soundhub_utils = { git = "https://github.com/SchmidtDSE/soundhub_utils.git" }
+
+[tool.pixi.environments]
+default = {}                   
+dev = { features = ["soundhub-utils"] }
