@@ -1,19 +1,22 @@
 {
-  "name": "Acoustic API Sampler",
+  "name": "acoustic-api-sampler",
   "build": {
     "dockerfile": "Dockerfile",
     "context": ".."
   },
   "workspaceFolder": "/workspace",
+  "forwardPorts": [8888],
+  "remoteUser": "root",
+
   "customizations": {
     "vscode": {
       "extensions": [
         "ms-python.python",
         "ms-toolsai.jupyter"
-      ]
+      ],
+      "settings": {
+        "python.defaultInterpreterPath": "/workspace/.pixi/envs/default/bin/python"
+      }
     }
-  },
-  "forwardPorts": [8888],
-  "postCreateCommand": "pixi install",
-  "remoteUser": "root"
+  }
 }
