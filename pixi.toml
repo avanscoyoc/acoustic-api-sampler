@@ -2,7 +2,7 @@
 authors = ["avanscoyoc <amy.e.van.scoyoc@gmail.com>"]
 channels = ["conda-forge"]
 name = "acoustic-api-sampler"
-platforms = ["osx-arm64"]
+platforms = ["osx-arm64", "linux-64", "linux-aarch64"]
 version = "0.1.0"
 
 [tasks]
@@ -15,3 +15,5 @@ ipykernel = "*"
 numpy = "*"
 pandas = "*"
 matplotlib = "*"
+boto3 = ">=1.42.56,<2"
+soundhub_utils = { git = "https://github.com/SchmidtDSE/soundhub_utils.git" }
